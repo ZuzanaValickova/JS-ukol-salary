@@ -13,27 +13,27 @@ Použítím funkcí salary a taxed spočítejte svoji měsíční mzdu po 15% zd
 */
 
 
-const salaryCalculator = (wage, hours, days) => {
-    const grossIncomePerMonth = wage * hours * days
-    return grossIncomePerMonth
+
+const Salarycalculator = (wage, hours, days) => {
+    const grossMonthlySalary = wage * hours * days
+    return grossMonthlySalary
 }
 
-const taxation = (wage, tax) => {
-    const wageTax = (wage * tax) / 100;
-    const taxedWage = wage - wageTax
-    return taxedWage
-
+const taxedSalary = (amount, taxPercentage) => {
+    const taxAmount = (amount * taxPercentage) / 100
+    const taxedAmount = amount - taxAmount
+    return taxedAmount
 }
 
-const wage = 300
-const hours = 8
-const days = 23
-const tax = 15
+const wagePerHour = 300 
+const hoursDaily = 8 
+const daysMonthly = 23 
+const taxPercentage = 15 
 
-const grossSalary = salaryCalculator(wage, hours, days)
-const netSalary = taxation(grossIncomePerMonth, taxPercentage)
+const grossSalary = Salarycalculator(wagePerHour, hoursDaily, daysMonthly)
+const netSalary = taxedSalary(grossSalary, taxPercentage)
 
-console.log("<p>Gross Salary: ${grossSalary} CZK</p>")
-
+console.log(`Gross Salary: ${grossSalary} CZK`)
+console.log(`Net Salary (after ${taxPercentage}% taxation): ${netSalary} CZK`)
 
 
